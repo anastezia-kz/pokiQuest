@@ -1,3 +1,9 @@
+:root {
+    --container-width: 800px;
+    --cellSpacing: 12px;
+    --cellSize: 100px;
+}
+
 .task__container {
     width: max(var(--container-width, 800px), 380px);
     min-width: 380px;
@@ -7,13 +13,52 @@
     transition: width 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
-.task__grid {
-    display: grid;
-    gap: var(--cellSpacing);
-    grid-template-columns: repeat(3, var(--cellSize));
-    margin: 0 auto var(--cellSpacing);
+/* Layouts for each chunk */
+.task__gridExtraSmall,
+.task__gridSmall,
+.task__gridMedium,
+.task__gridLarge {
+  display: grid;
+  gap: var(--cellSpacing);
+  margin-bottom: var(--cellSpacing);
 }
 
+.task__gridExtraSmall{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "t1 t2"
+      "t3 t4"
+      "t5 t6";
+}
+
+.task__gridSmall {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "t1 t1 t2"
+    "t1 t1 t3"
+    "t4 t5 t6";
+}
+
+.task__gridMedium {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "t1 t1 t3 t2 t2 t4"
+    "t1 t1 t5 t2 t2 t6";
+}
+
+.task__gridLarge {
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-areas:
+    "t1 t1 t2 t2 t3 t3 t4 t4 t5"
+    "t1 t1 t2 t2 t3 t3 t4 t4 t6";
+}
+
+  .task--1 { grid-area: t1; }
+  .task--2 { grid-area: t2; }
+  .task--3 { grid-area: t3; }
+  .task--4 { grid-area: t4; }
+  .task--5 { grid-area: t5; }
+  .task--6 { grid-area: t6; }
 /*
 here are some grid examples or come up with your own:
 
@@ -30,3 +75,4 @@ if the container bigger than 1000px, then we render following grid:
     t1 t1 t2 t2 t3 t3 t4 t4 t5
     t1 t1 t2 t2 t3 t3 t4 t4 t6
 */
+

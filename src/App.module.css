@@ -16,6 +16,13 @@
     }
 }
 
+.app__containerBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .app__sliders {
     margin: 16px 0;
 }
@@ -32,3 +39,4 @@
     margin: 0 auto 16px;
     width: 200px;
 }
+

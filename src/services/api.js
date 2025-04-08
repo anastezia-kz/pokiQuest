@@ -3,13 +3,14 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const API_URL = 'https://api.poki.com';
 const SITE_ID = 3;
 const DEVICE = 'desktop';
+const COUNTRY = 'NL';
 
 export const api = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
     endpoints: (builder) => ({
         getHomepage: builder.query({
-            query: () => `/list/game/HOME?site=${SITE_ID}&device=${DEVICE}&country=US&limit=1`,
+            query: ({limit = 10}) => `/list/game/HOME?site=${SITE_ID}&device=${DEVICE}&country=${COUNTRY}&limit=${limit}`,
             transformResponse: responseData => {
                 const { content } = responseData;
                 return {
@@ -18,7 +19,10 @@ export const api = createApi({
             },
         }),
         getGameBySlug: builder.query({
-            query: ({ slug }) => `/game/${slug}?site=${SITE_ID}&device=${DEVICE}&country=NL`,
+            query: ({ slug }) => `/game/${slug}?site=${SITE_ID}&device=${DEVICE}&country=${COUNTRY}`,
+            transformResponse: responseData => {
+                return  responseData;
+            },
         }),
     }),
 });

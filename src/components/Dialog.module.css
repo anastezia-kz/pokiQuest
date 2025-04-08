@@ -1,3 +1,10 @@
+:root {
+    --custom-dialog-background: #fff;
+    --custom-dialog-border-radius: 8px;
+    --custom-dialog-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --custom-dialog-padding: 16px;
+}
+
 @keyframes dialogAnimationFadeAndShake {
     0% {
         opacity: 0;
@@ -14,15 +21,23 @@
 
 .dialog {
     position: fixed;
+    height: 50%;
     top: 50%;
     left: 50%;
+    border-radius: 16px;
     transform: translate(-50%, -50%);
     background: var(--custom-dialog-background, #fff);
     z-index: 3;
     margin: 0;
+    animation: dialogAnimationFadeAndShake 1s ease-in-out;
 }
 
 .dialog__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
     p {
         margin: 16px 0 0;
     }
@@ -33,6 +48,16 @@
     height: 204px;
 }
 
-.dialog__closeBtn {
+.dialog__closeBtn { 
+    width: 100%;
+    position: sticky;  
+    bottom:0;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    z-index: 4;
+}
 
+.dialog__closeBtn button {
+    width: inherit;
 }
