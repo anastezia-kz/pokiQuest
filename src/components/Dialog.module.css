@@ -1,0 +1,38 @@
+@keyframes dialogAnimationFadeAndShake {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--custom-dialog-background, #fff);
+    z-index: 3;
+    margin: 0;
+}
+
+.dialog__content {
+    p {
+        margin: 16px 0 0;
+    }
+}
+
+.dialog__image {
+    height: 204px;
+    height: 204px;
+}
+
+.dialog__closeBtn {
+
+}

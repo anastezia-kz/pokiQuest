@@ -1,0 +1,32 @@
+.task__container {
+    width: max(var(--container-width, 800px), 380px);
+    min-width: 380px;
+    background: #fff;
+    padding: var(--cellSpacing);
+    border-radius: 16px;
+    transition: width 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.task__grid {
+    display: grid;
+    gap: var(--cellSpacing);
+    grid-template-columns: repeat(3, var(--cellSize));
+    margin: 0 auto var(--cellSpacing);
+}
+
+/*
+here are some grid examples or come up with your own:
+
+by default, we render following grid:
+    t1 t1 t2
+    t1 t1 t3
+    t4 t5 t6
+
+if the container bigger than 600px, then we render following grid:
+    t1 t1 t3 t2 t2 t4
+    t1 t1 t5 t2 t2 t6
+
+if the container bigger than 1000px, then we render following grid:
+    t1 t1 t2 t2 t3 t3 t4 t4 t5
+    t1 t1 t2 t2 t3 t3 t4 t4 t6
+*/

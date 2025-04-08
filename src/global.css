@@ -1,0 +1,232 @@
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-regular-cyrillic.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-regular-cyrillic.woff) format("woff");
+    unicode-range: u+04??
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-regular-greek-coptic.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-regular-greek-coptic.woff) format("woff");
+    unicode-range: u+0370-03ff
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-regular-latin.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-regular-latin.woff) format("woff");
+    unicode-range: u+0020-007f,u+00a0-00ff
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-regular-latin-ext-a.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-regular-latin-ext-a.woff) format("woff");
+    unicode-range: u+0100-017f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-regular-latin-ext-b.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-regular-latin-ext-b.woff) format("woff");
+    unicode-range: u+0180-024f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-regular-latin-extended.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-regular-latin-extended.woff) format("woff");
+    unicode-range: u+1e??,u+0300-036f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-bold-cyrillic.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-bold-cyrillic.woff) format("woff");
+    unicode-range: u+04??
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-bold-greek-coptic.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-bold-greek-coptic.woff) format("woff");
+    unicode-range: u+0370-03ff
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-bold-latin.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-bold-latin.woff) format("woff");
+    unicode-range: u+0020-007f,u+00a0-00ff
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-bold-latin-ext-a.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-bold-latin-ext-a.woff) format("woff");
+    unicode-range: u+0100-017f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-bold-latin-ext-b.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-bold-latin-ext-b.woff) format("woff");
+    unicode-range: u+0180-024f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Proxima Nova;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/proxima-nova-bold-latin-extended.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/proxima-nova-bold-latin-extended.woff) format("woff");
+    unicode-range: u+0180-024f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Torus;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/torus-bold-latin.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/torus-bold-latin.woff) format("woff");
+    unicode-range: u+0020-007f,u+00a0-00ff
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Torus;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/torus-bold-latin-ext-a.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/torus-bold-latin-ext-a.woff) format("woff");
+    unicode-range: u+0100-017f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Torus;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/torus-bold-latin-ext-b.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/torus-bold-latin-ext-b.woff) format("woff");
+    unicode-range: u+0180-024f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Torus;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/torus-bold-latin-extended.woff2) format("woff2"),url(https://a.poki-cdn.com/fonts/torus-bold-latin-extended.woff) format("woff");
+    unicode-range: u+0180-024f
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Noto Sans Arabic;
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://a.poki-cdn.com/fonts/noto-sans-arabic.woff2) format("woff2");
+    unicode-range: u+06??,u+0750-077f,u+0870-088e,u+0890-0891,u+0898-08e1,u+08e3-08ff
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Noto Sans Arabic;
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://a.poki-cdn.com/fonts/noto-sans-arabic.woff2) format("woff2");
+    unicode-range: u+06??,u+0750-077f,u+0870-088e,u+0890-0891,u+0898-08e1,u+08e3-08ff
+}
+
+
+:root {
+    --fontBody: 'Proxima Nova', 'Open Sans', 'Gill Sans MT', 'Gill Sans', 'Noto Sans Arabic', Arial, sans-serif;
+    --fontTorus: 'Torus', 'Noto Sans Arabic', sans-serif;
+
+    --bezier: cubic-bezier(.25, .1, .25, 1);
+    --cellSize: 94px;
+    --cellSpacing: 16px;
+    --maxPageWidth: 1860px;
+
+    --shadow-angle: 1px 2px 3px 1px rgba(93, 107, 132, 0.20);
+    --shadow-close: 0px 3px 5px 3px rgba(93, 107, 132, 0.20);
+    --shadow-mid: 0px 7px 10px 4px rgba(93, 107, 132, 0.30);
+    --shadow-hover: 0px 12px 16px 8px rgba(93, 107, 132, 0.30);
+    --shadow-far: 0px 20px 24px 14px rgba(93, 107, 132, 0.24);
+
+    --blue-5: #0074e0;
+    --blue-3: #054a91;
+    --denim-blue: #002b50;
+    --green-1: #15c8d1;
+    --green-2: #17d7d8;
+    --green-3: #18e9da;
+    --green-4: #17f1d8;
+    --green-5: #3cf7dc;
+    --green-6: #4dffe1;
+    --green-7: #83ffe7;
+    --green-8: #a4ffee;
+    --grey-3: #5d6b84;
+    --grey-5: #bac9de;
+    --grey-7: #f0f5fc;
+    --grey-9: #f9fbff;
+    --pink-1: #ff7690;
+    --pink-2: #ff8aa6;
+    --pink-3: #ff99b1;
+    --pink-4: #ffa4ba;
+    --pink-5: #ffa9be;
+    --pink-6: #ffaec5;
+    --pink-7: #ffc2d6;
+    --pink-8: #ffc9dd;
+    --poki-blue: #009cff;
+    --pure-white: #ffffff;
+    --purple-1: #c977e8;
+    --purple-2: #d490f2;
+    --purple-3: #da9ef3;
+    --purple-4: #dca7f2;
+    --purple-5: #e0aef5;
+    --purple-6: #e1b5f7;
+    --purple-7: #eac0fc;
+    --purple-8: #ebccff;
+    --yellow-1: #ff9e00;
+    --yellow-2: #ffaf00;
+    --yellow-3: #ffc500;
+    --yellow-4: #ffd100;
+    --yellow-5: #ffdc00;
+    --yellow-6: #ffe200;
+    --yellow-7: #fbe756;
+    --yellow-8: #ffed85;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html, body, iframe, canvas, div {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--fontBody);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--denim-blue);
+    background: var(--green-7) url(https://a.poki-cdn.com/images/bg-diamante.svg) no-repeat center top;
+    background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fontTorus);
+    font-weight: 700;
+    margin: 0;
+}

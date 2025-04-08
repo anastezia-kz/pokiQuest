@@ -1,0 +1,40 @@
+.tile__container {
+    width: 100%;
+    height: 100%;
+
+    transition: box-shadow 0.3s ease;
+    position: relative;
+
+    &:hover {
+        box-shadow: var(--shadow-far);
+    }
+}
+
+.tile__picture {
+    display: block;
+    aspect-ratio: 1 / 1;
+}
+
+.tile__picture__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+.tile__title {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 4px;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.tile__video {
+
+}
