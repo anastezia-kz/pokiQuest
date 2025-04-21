@@ -20,6 +20,9 @@
 }
 
 .dialog {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
     position: fixed;
     height: 50%;
     top: 50%;
@@ -33,10 +36,11 @@
 }
 
 .dialog__content {
+    flex: 1;
+    overflow-y: auto; 
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
 
     p {
         margin: 16px 0 0;

@@ -42,11 +42,14 @@ export default function Dialog({slug, closeDialog}) {
         >
             {error ? 
                 <div>Error loading game details. Please try again later.</div>
-                :<article className={styles.dialog__content}>
+                :
+                <article  className={styles.dialog__content}>
                     <img src={imgSrc} alt={title} onError={(e) => e.target.src = '/path/to/fallback-image.jpg'} />
                     <h2 id="dialog-title">{title}</h2>
                     <GameDescription description={description} />
-                </article>}
+                </article>
+          
+            }
             <div className={styles.dialog__closeBtn}>
                 <button onClick={closeDialog} type="button" >Close</button>
             </div>
