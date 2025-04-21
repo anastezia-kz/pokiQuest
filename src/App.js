@@ -1,5 +1,8 @@
 import clsx from 'clsx'; 
-import { useState, useLayoutEffect, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import debounce from 'lodash.debounce';
+import { setLimit } from './slices/task.slice.js'; 
+import { useState, useLayoutEffect, useRef, useCallback } from 'react';
 import { useGetHomepageQuery } from '/src/services/api.js';
 
 import Task from '/src/components/Task';
@@ -15,37 +18,45 @@ const getSafeWidth = (requestedWidth) => {
 
 export function App() {
     const [containerWidth, setContainerWidth] = useState(0); 
-    const [limit, setLimit] = useState(10); 
+    const dispatch = useDispatch();
+    const limit = useSelector((state) => state.task.limit);
+
     const boxRef = useRef(null);
+
     const { data, error, isLoading } = useGetHomepageQuery({limit});
 
     const TILE_WIDTH = 100;
 
-    // 👾 Play around with actual screen width to see how it affects the layout
+    const updateBoxSize = useCallback(() => {
+        const boxWidth = boxRef.current?.getBoundingClientRect().width ?? 0;
+        const safeWidth = getSafeWidth(boxWidth);
+        const maxTiles = Math.floor(safeWidth / TILE_WIDTH);
+
+        setContainerWidth(safeWidth);
+        dispatch(setLimit(maxTiles));
+    }, [dispatch]);
+
+    const debouncedUpdateBoxSize = useCallback(debounce(updateBoxSize, 200), [updateBoxSize]);
+
     useLayoutEffect(() => {
-        const updateBoxSize = () => {
-            const boxWidth = boxRef.current.getBoundingClientRect().width;
-            const safeWidth = getSafeWidth(boxWidth);
-            const maxTiles = Math.floor(safeWidth / TILE_WIDTH);
-    
-            setContainerWidth(safeWidth);
-            setLimit(maxTiles);
-        };
-    
         updateBoxSize(); 
-        window.addEventListener("resize", updateBoxSize);
-        return () => window.removeEventListener("resize", updateBoxSize);
-    }, []);
+
+        window.addEventListener('resize', debouncedUpdateBoxSize);
+        return () => {
+            window.removeEventListener('resize', debouncedUpdateBoxSize);
+            debouncedUpdateBoxSize.cancel(); 
+        };
+    }, [debouncedUpdateBoxSize, updateBoxSize]);
 
     const onWidthChange = (e) => {
         const requestedWidth = Number(e.target.value);
         const safeWidth = getSafeWidth(requestedWidth);
         setContainerWidth(safeWidth);
-        setLimit(Math.floor(safeWidth / TILE_WIDTH));
+        dispatch(setLimit(Math.floor(safeWidth / TILE_WIDTH)));
     };
     
     const onLimitChange = (e) => {
-        setLimit(Number(e.target.value)); 
+        dispatch(setLimit(Number(e.target.value)));
     };
 
 

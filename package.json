@@ -9,6 +9,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "clsx": "^2.1.1",
     "dompurify": "^3.2.5",
+    "lodash.debounce": "^4.0.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0"
