@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import DOMPurify from 'dompurify';
+import { useSelector } from 'react-redux'
 import { generateImageUrl } from '/src/utils/urlHelper';
 import { useGetGameBySlugQuery } from '/src/services/api';
 
@@ -14,28 +15,28 @@ function GameDescription({  description }) {
     );
 }
 
-export default function Dialog({slug, closeModal}) {
+export default function Dialog({slug, closeDialog}) {
     const { data, error, isLoading } = useGetGameBySlugQuery({slug});
-
+    const isDialogOpen = useSelector((state) => state.task.isDialogOpen);
     const dialogRef = useRef();
- 
+   
     const { description, config, image, title } = data || {};
 
     const imgSrc = generateImageUrl(image?.path, 204, 204);
 
     useEffect(() => {
-        if (slug && !isLoading && !dialogRef.current.open) {
-            dialogRef.current.showModal()
-        } else if (!slug || isLoading) {
+        if (isDialogOpen && slug && !isLoading && !dialogRef.current.open) {
+            dialogRef.current.showModal();
+        } else if (!isDialogOpen || !slug || isLoading) {
             dialogRef.current?.close();
         }
-    }, [slug, isLoading, closeModal]);
-  
-    if (isLoading) return <dialog className={styles.dialog}>Loading...</dialog>;
+    }, [isDialogOpen, slug, isLoading]);
     
 
+    if (isLoading) return <dialog className={styles.dialog}>Loading...</dialog>;
+    
     return (
-        <dialog ref={dialogRef} onCancel={closeModal} className={styles.dialog} style={{'--custom-dialog-background': `${config?.background?.color ?? '#fff'}`}}
+        <dialog ref={dialogRef} onCancel={closeDialog} className={styles.dialog} style={{'--custom-dialog-background': `${config?.background?.color ?? '#fff'}`}}
             aria-labelledby="dialog-title"
             aria-describedby="dialog-description"
         >
@@ -47,7 +48,7 @@ export default function Dialog({slug, closeModal}) {
                     <GameDescription description={description} />
                 </article>}
             <div className={styles.dialog__closeBtn}>
-                <button onClick={closeModal} type="button" >Close</button>
+                <button onClick={closeDialog} type="button" >Close</button>
             </div>
         </dialog>
     );

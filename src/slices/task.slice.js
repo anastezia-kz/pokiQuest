@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     limit: 3,
     isDialogOpen: false,
+    slug: null, 
 };
 
 const taskSlice = createSlice({
@@ -15,8 +16,11 @@ const taskSlice = createSlice({
         setDialogOpen(state, action) {
             state.isDialogOpen = action.payload;
         },
+        setSlug(state, action) {
+            state.slug = action.payload;
+        },
     },
 });
-export const { setLimit, setDialogOpen } = taskSlice.actions;
+export const { setLimit, setDialogOpen, setSlug } = taskSlice.actions;
 
 export default taskSlice.reducer;

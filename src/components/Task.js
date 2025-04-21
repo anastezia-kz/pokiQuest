@@ -1,6 +1,7 @@
 import clsx from 'clsx'; 
-
-import { useCallback, useState, useMemo } from 'react';
+import { useSelector,useDispatch } from 'react-redux'
+import { useMemo,useCallback } from 'react';
+import { setDialogOpen, setSlug } from '/src/slices/task.slice';
 
 import * as styles from '/src/components/Task.module.css';
 import Tile from './Tile';
@@ -10,12 +11,21 @@ import Dialog from './Dialog';
 const CHUNK_SIZE = 6;
 
 export default function Task({ containerWidth, isLoading, error, data }) {
-    const [activeModalSlug, setActiveModalSlug] = useState(null);
+    const dispatch = useDispatch();
 
-    const handleOpenModal = useCallback((slug) => {
-        setActiveModalSlug(slug);
-    }, []);
+    const isDialogOpen = useSelector((state) => state.task.isDialogOpen);
+    const slug = useSelector((state) => state.task.slug);
 
+    const handleOpenDialog = useCallback((slug) => {
+        dispatch(setSlug(slug));
+        dispatch(setDialogOpen(true));
+    }, [dispatch]);
+
+    const closeDialog = () => {
+        dispatch(setDialogOpen(false));
+        dispatch(setSlug(null));
+    };
+    
     // const chunkedGames = data?.games.reduce((acc, game, index) => {
     //     const chunkIndex = Math.floor(index / CHUNK_SIZE);
     //     if(!acc[chunkIndex]) {
@@ -53,16 +63,13 @@ export default function Task({ containerWidth, isLoading, error, data }) {
                             key={game.id}
                             game={game}
                             className={styles[`task--${index + 1}`]}
-                            onTileClick={handleOpenModal} 
+                            handleOpenDialog={handleOpenDialog}
                         />
                     ))}
                 </div>
             ))}
-            {activeModalSlug && (
-                <Dialog
-                    slug={activeModalSlug}
-                    closeModal={() => setActiveModalSlug(null)}
-                />
+            {isDialogOpen && slug &&(
+                <Dialog slug={slug} closeDialog={closeDialog}/>
             )}
         </div>
     );
